@@ -56,7 +56,6 @@ func ProcessChannels(
 
 	return waiter.Run(ctx, func(ctx context.Context) error {
 		return tgClient.Run(ctx, func(ctx context.Context) error {
-			// TODO: ВОт блять основная проблема что оно работает только тут нельзя вынести это говно, а доки нету на эту либу блядскую
 			if err := tgClient.Auth().IfNecessary(ctx, flow); err != nil {
 				return errors.Wrap(err, "auth")
 			}
